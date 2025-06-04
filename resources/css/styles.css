@@ -1,0 +1,437 @@
+/* Общие стили */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --success-color: #2ecc71;
+    --error-color: #e74c3c;
+    --warning-color: #f39c12;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --border-radius: 4px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Шапка */
+header {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+nav a, nav button {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s;
+}
+
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+nav a:hover, nav button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Основное содержимое */
+main {
+    padding: 2rem 0;
+    min-height: calc(100vh - 150px);
+}
+
+/* Подвал */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Кнопки */
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Формы */
+.auth-form, .form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 100px;
+}
+
+.error {
+    color: var(--error-color);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* Уведомления */
+.alert {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: var(--border-radius);
+}
+
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    border-radius: var(--border-radius);
+    border: 1px solid #ffeeba;
+}
+
+/* Таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: var(--dark-color);
+    color: white;
+}
+
+table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.pagination a:hover {
+    background-color: #f5f5f5;
+}
+
+.pagination .active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Герой-секция */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.actions {
+    margin-top: 2rem;
+}
+
+.actions .button {
+    margin: 0 0.5rem;
+}
+
+/* Адаптивные стили для смартфонов */
+@media (max-width: 480px) {
+    /* Общие адаптации */
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    /* Шапка */
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    nav a, nav button {
+        margin: 0;
+        padding: 0.3rem 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Формы */
+    .auth-form, .form-container {
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 0.4rem;
+    }
+
+    /* Таблицы */
+    table {
+        font-size: 0.8rem;
+    }
+
+    table th, table td {
+        padding: 0.5rem 0.3rem;
+    }
+
+    /* Скрытие неважных колонок в таблицах */
+    table td:nth-child(1),
+    table th:nth-child(1) {
+        display: none;
+    }
+
+    /* Панель администратора - адаптация таблицы */
+    .admin-table {
+        overflow-x: auto;
+    }
+
+    /* Модальные окна */
+    .modal-content {
+        width: 95%;
+        margin: 30% auto;
+        padding: 15px;
+    }
+
+    /* Кнопки */
+    .button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Герой-секция */
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .actions .button {
+        margin: 0;
+        width: 100%;
+    }
+
+    /* Специфичные адаптации для страницы заказов */
+    .orders-list table {
+        display: block;
+    }
+
+    .orders-list thead {
+        display: none;
+    }
+
+    .orders-list tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: var(--border-radius);
+        padding: 0.5rem;
+    }
+
+    .orders-list td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.3rem 0;
+        border: none;
+    }
+
+    .orders-list td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: 1rem;
+    }
+
+    /* Адаптация форм ввода */
+    input[type="datetime-local"] {
+        font-size: 0.9rem;
+    }
+
+    /* Пагинация */
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .pagination a, .pagination span {
+        padding: 0.3rem 0.6rem;
+        margin: 0.2rem;
+    }
+
+    select {
+        font-size: 16px;
+        padding: 0.6rem;
+    }
+    input[type="datetime-local"] {
+        min-height: 44px; /* Минимальный размер для удобного касания */
+    }
+
+    a, button, input, select, textarea {
+        min-height: 44px; /* Рекомендуемый размер для касания */
+    }
+
+    .button {
+        padding: 0.8rem 1rem; /* Увеличиваем область касания */
+    }
+}
